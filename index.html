@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minimal Product Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="product-header">
+    <div class="product-gallery">
+      <img id="mainImage" src="https://via.placeholder.com/800x600" alt="Product" />
+      <div class="thumbnails">
+        <img src="https://via.placeholder.com/100" onclick="changeImage(this.src)" />
+        <img src="https://via.placeholder.com/100/aaaaaa" onclick="changeImage(this.src)" />
+        <img src="https://via.placeholder.com/100/bbbbbb" onclick="changeImage(this.src)" />
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>Modern Cotton Tee</h1>
+      <div class="price">$29.99</div>
+      <p class="description">Soft cotton, modern fit, sustainably made. Perfect for everyday wear.</p>
+
+      <div class="selectors">
+        <label for="size">Size</label>
+        <select id="size">
+          <option>S</option><option>M</option><option>L</option><option>XL</option>
+        </select>
+
+        <label for="color">Color</label>
+        <select id="color">
+          <option>Black</option><option>White</option><option>Gray</option>
+        </select>
+      </div>
+
+      <button id="addToCartBtn" class="add-to-cart">Add to Cart</button>
+
+      <div class="rating">
+        ⭐⭐⭐⭐☆ (124 reviews)
+      </div>
+    </div>
+  </header>
+
+  <section class="related-products">
+    <h2>Related Products</h2>
+    <div class="carousel">
+      <img src="https://via.placeholder.com/200x250" />
+      <img src="https://via.placeholder.com/200x250/cccccc" />
+      <img src="https://via.placeholder.com/200x250/dddddd" />
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
