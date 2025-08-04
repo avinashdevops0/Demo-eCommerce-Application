@@ -1,28 +1,16 @@
-function changeImage(src) {
-  document.getElementById("mainImage").src = src;
+function processTransaction() {
+    const amount = document.getElementById('amount').value;
+    const recipient = document.getElementById('recipient').value;
+    const account = document.getElementById('account').value;
+
+    if (amount && recipient && account) {
+        document.getElementById('transaction-status').innerHTML = `
+            <p>Transaction Successful!</p>
+            <p>Amount: $${amount}</p>
+            <p>Recipient: ${recipient}</p>
+            <p>Account: ${account}</p>
+        `;
+    } else {
+        document.getElementById('transaction-status').innerHTML = `<p style="color: red;">Please fill all fields!</p>`;
+    }
 }
-
-document.getElementById("addToCartBtn").addEventListener("click", function () {
-  const size = document.getElementById("size").value;
-  const color = document.getElementById("color").value;
-  const cartItem = {
-    id: "cotton-tee",
-    title: "Modern Cotton Tee",
-    price: 29.99,
-    size,
-    color,
-    qty: 1,
-  };
-
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const existingIndex = cart.findIndex(item => item.id === cartItem.id && item.size === size && item.color === color);
-
-  if (existingIndex !== -1) {
-    cart[existingIndex].qty += 1;
-  } else {
-    cart.push(cartItem);
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Added to cart!");
-});
